@@ -15,7 +15,7 @@ worker = ZeebeWorker(channel)
 @worker.task(task_type="trade_match_worker")
 async def trade_match_work(qty, account):
     print(f"working:  qty={qty}")
-    return None
+    return {"match_result": "unmatched"}
 
 # Main loop
 loop = asyncio.get_event_loop()
